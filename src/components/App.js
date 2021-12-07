@@ -5,7 +5,7 @@ import './App.css';
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
-import {applyNumber, changeOperation, clearDisplay, mPlus} from "../actions";
+import {applyNumber, changeOperation, clearDisplay, mPlus, mR, mC} from "../actions";
 
 function App() {
 
@@ -27,6 +27,14 @@ function App() {
     dispatch(mPlus());
   }
 
+  const mRHandler = () => {
+    dispatch(mR());
+  }
+
+  const mCHandler = () => {
+    dispatch(mC());
+  }
+
 
   return (
     <div className="App">
@@ -46,8 +54,8 @@ function App() {
             
             <div className="row">
               <CalcButton onClick={() => mPlusHandler()} value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={() => mRHandler()} value={"MR"}/>
+              <CalcButton onClick={() => mCHandler()} value={"MC"}/>
             </div>
 
             <div className="row">
